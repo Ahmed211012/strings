@@ -1,0 +1,219 @@
+<!-- 2. Find the Last Element from the Given Array -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Last Element</title>
+</head>
+<body>
+    <button onclick="findLastElement()">Find Last Element</button>
+    <script>
+        function findLastElement() {
+            let input = prompt("Enter an array of elements (comma separated):");
+            let arr = input.split(',');
+            if (arr.length > 0) {
+                alert("The last element is: " + arr[arr.length - 1]);
+            } else {
+                alert("The array is empty.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 3. Popup that Allows Only 10 Digits in Text Field -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate 10-Digit Input</title>
+</head>
+<body>
+    <button onclick="validateInput()">Validate 10-Digit Number</button>
+    <script>
+        function validateInput() {
+            let input = prompt("Enter a 10-digit number:");
+            if (input.length === 10 && /^[0-9]+$/.test(input)) {
+                alert("Valid 10-digit number.");
+            } else {
+                alert("Invalid input! Please enter exactly 10 digits.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 4. Find Specific Words in Array and Find Repeated Characters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Repeated Characters</title>
+</head>
+<body>
+    <button onclick="findRepeatedChars()">Find Repeated Characters</button>
+    <script>
+        function findRepeatedChars() {
+            let word = prompt("Enter a word:");
+            let arr = prompt("Enter an array of words (comma separated):").split(',');
+            let repeatedChars = {};
+            for (let char of word) {
+                repeatedChars[char] = (repeatedChars[char] || 0) + 1;
+            }
+            let result = [];
+            for (let char in repeatedChars) {
+                if (repeatedChars[char] > 1) {
+                    result.push(char);
+                }
+            }
+            alert("Repeated characters in the word: " + result.join(", "));
+        }
+    </script>
+</body>
+</html>
+
+<!-- 5. Count Vowels in an Array of Characters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Vowels</title>
+</head>
+<body>
+    <button onclick="countVowels()">Count Vowels</button>
+    <script>
+        function countVowels() {
+            let arr = prompt("Enter an array of characters (comma separated):").split(',');
+            let vowels = ['a', 'e', 'i', 'o', 'u'];
+            let count = 0;
+            for (let char of arr) {
+                if (vowels.includes(char.toLowerCase())) {
+                    count++;
+                }
+            }
+            alert("Number of vowels: " + count);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 6. Find the Longest Word from a String -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Longest Word</title>
+</head>
+<body>
+    <button onclick="findLongestWord()">Find Longest Word</button>
+    <script>
+        function findLongestWord() {
+            let str = prompt("Enter a string:");
+            let words = str.split(' ');
+            let longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, '');
+            alert("The longest word is: " + longestWord);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 7. Convert Uppercase to Lowercase and Lowercase to Uppercase -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Case</title>
+</head>
+<body>
+    <button onclick="convertCase()">Convert Case</button>
+    <script>
+        function convertCase() {
+            let str = prompt("Enter a string:");
+            let converted = str.split('').map(char => 
+                char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+            ).join('');
+            alert("Converted string: " + converted);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 8. Find the Location of a Word from a String -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Word Location</title>
+</head>
+<body>
+    <button onclick="findLocation()">Find Word Location</button>
+    <script>
+        function findLocation() {
+            let str = prompt("Enter a string:");
+            let word = prompt("Enter a word to find:");
+            let position = str.indexOf(word);
+            if (position !== -1) {
+                alert("The word '" + word + "' is located at index: " + position);
+            } else {
+                alert("Word not found.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 9. Using Splice to Modify an Array -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Splice Example</title>
+</head>
+<body>
+    <button onclick="arraySplice()">Array Splice</button>
+    <script>
+        function arraySplice() {
+            let arr = ['apple', 'banana', 'cherry'];
+            alert("Original Array: " + arr);
+            arr.splice(1, 1);
+            alert("After removal: " + arr);
+            arr.splice(1, 0, 'orange');
+            alert("After insertion: " + arr);
+            arr.splice(1, 1, 'grape');
+            alert("After replacement: " + arr);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 10. Detect Words, Characters, Spaces, and Special Symbols -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze String</title>
+</head>
+<body>
+    <button onclick="analyzeString()">Analyze</button>
+    <script>
+        function analyzeString() {
+            let str = prompt("Enter a string:");
+            let words = str.split(/\s+/).filter(word => word.length > 0);
+            let wordCount = words.length;
+            let charCount = str.replace(/\s/g, '').length;
+            let spaceCount = (str.match(/\s/g) || []).length;
+            let specialCharCount = (str.match(/[^a-zA-Z0-9\s]/g) || []).length;
+            alert(`Words: ${wordCount}\nCharacters (excluding spaces): ${charCount}\nSpaces: ${spaceCount}\nSpecial Characters: ${specialCharCount}`);
+        }
+    </script>
+</body>
+</html>
